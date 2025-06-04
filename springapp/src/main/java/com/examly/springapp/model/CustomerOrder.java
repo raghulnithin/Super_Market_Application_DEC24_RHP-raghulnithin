@@ -19,4 +19,5 @@ public class CustomerOrder {
     private Long productId;
     private int quantity;
     private Date orderDate;
+    
 }

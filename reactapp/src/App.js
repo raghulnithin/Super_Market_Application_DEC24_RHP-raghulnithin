@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import CartPage from './pages/CartPage';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import DetailsPage from './components/DetailsPage'; // or './pages/DetailsPage' if it's in pages
 
 const App = () => {
-  const [cart, setCart] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
+  // Add item to cart
   const handleAddToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
+    setCartItems((prevItems) => [...prevItems, product]);
   };
 
+  // Remove item from cart by ID
   const handleRemoveFromCart = (id) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
   return (
@@ -23,9 +28,17 @@ const App = () => {
         <Route
           path="/cart"
           element={
-            <CartPage cartItems={cart} onRemoveFromCart={handleRemoveFromCart} />
+            <CartPage
+              cartItems={cartItems}
+              onRemoveFromCart={handleRemoveFromCart}
+            />
           }
         />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/details" element={<DetailsPage />} />
+        <Route path="/" element={<Home onAddToCart={handleAddToCart} />} />
+        <Route path="/cart" element={<CartPage cartItems={cartItems} onRemoveFromCart={handleRemoveFromCart} />} />
+        +
       </Routes>
     </Router>
   );
