@@ -16,11 +16,10 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        // Check if default user exists
         if (userRepository.findByEmail("admin@example.com") == null) {
             User defaultUser = new User();
             defaultUser.setEmail("admin@example.com");
-            defaultUser.setPassword("admin123"); // Plaintext for now, no encryption
+            defaultUser.setPassword("admin123");
 
             userRepository.save(defaultUser);
             System.out.println("Default admin user created.");
