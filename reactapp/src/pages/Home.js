@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProductList from '../components/ProductList';
-import { fetchProducts } from '../api/api'; // 🆕 Added to fetch from backend
+import { fetchProducts } from '../api/api'; 
 
 const Home = ({ onAddToCart }) => {
   const [products, setProducts] = useState([
