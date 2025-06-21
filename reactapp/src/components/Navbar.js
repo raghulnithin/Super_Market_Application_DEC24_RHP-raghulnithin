@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart, FaUser, FaInfoCircle } from 'react-icons/fa';
-import styles from './Navbar.module.css'; // Use your CSS module for styling
+import styles from './Navbar.module.css'; 
 
 const Navbar = () => {
   return (
