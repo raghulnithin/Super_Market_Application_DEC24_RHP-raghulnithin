@@ -12,7 +12,6 @@ public class SpringappApplication {
         SpringApplication.run(SpringappApplication.class, args);
     }
 
-    // ✅ Correctly placed inside the class
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
