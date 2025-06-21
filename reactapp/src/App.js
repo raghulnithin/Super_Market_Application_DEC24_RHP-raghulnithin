@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import CartPage from './pages/CartPage';
 import LoginPage from './pages/LoginPage';
-import DetailsPage from './components/DetailsPage'; // or './pages/DetailsPage' if it's in pages
+import DetailsPage from './components/DetailsPage';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
